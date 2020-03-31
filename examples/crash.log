@@ -1,0 +1,865 @@
+2020/03/27 13:58:23 [INFO] Terraform version: 0.12.24  
+2020/03/27 13:58:23 [INFO] Go runtime version: go1.12.13
+2020/03/27 13:58:23 [INFO] CLI args: []string{"/home/sijeesh/go/bin/terraform", "apply"}
+2020/03/27 13:58:23 [DEBUG] Attempting to open CLI config file: /home/sijeesh/.terraformrc
+2020/03/27 13:58:23 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2020/03/27 13:58:23 [DEBUG] checking for credentials in "/home/sijeesh/.terraform.d/plugins"
+2020/03/27 13:58:23 [DEBUG] checking for credentials in "/home/sijeesh/.terraform.d/plugins/linux_amd64"
+2020/03/27 13:58:23 [INFO] CLI command args: []string{"apply"}
+2020/03/27 13:58:23 [TRACE] Meta.Backend: no config given or present on disk, so returning nil config
+2020/03/27 13:58:23 [TRACE] Meta.Backend: backend has not previously been initialized in this working directory
+2020/03/27 13:58:23 [DEBUG] New state was assigned lineage "6f40cf0a-b327-004c-3239-ba36248caf18"
+2020/03/27 13:58:23 [TRACE] Meta.Backend: using default local state only (no backend configuration, and no existing initialized backend)
+2020/03/27 13:58:23 [TRACE] Meta.Backend: instantiated backend of type <nil>
+2020/03/27 13:58:23 [DEBUG] checking for provider in "."
+2020/03/27 13:58:23 [WARN] found legacy provider "terraform-provider-simplivity"
+2020/03/27 13:58:23 [DEBUG] checking for provider in "/home/sijeesh/go/bin"
+2020/03/27 13:58:23 [DEBUG] checking for provider in ".terraform/plugins/linux_amd64"
+2020/03/27 13:58:23 [DEBUG] checking for provider in "/home/sijeesh/.terraform.d/plugins"
+2020/03/27 13:58:23 [ERROR] ignoring non-file /home/sijeesh/.terraform.d/plugins/terraform-provider-simplivity
+2020/03/27 13:58:23 [DEBUG] checking for provider in "/home/sijeesh/.terraform.d/plugins/linux_amd64"
+2020/03/27 13:58:23 [ERROR] ignoring non-file /home/sijeesh/.terraform.d/plugins/linux_amd64/terraform-provider-simplivity
+2020/03/27 13:58:23 [DEBUG] found valid plugin: "simplivity", "0.0.0", "/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/examples/terraform-provider-simplivity"
+2020/03/27 13:58:23 [DEBUG] checking for provisioner in "."
+2020/03/27 13:58:23 [DEBUG] checking for provisioner in "/home/sijeesh/go/bin"
+2020/03/27 13:58:23 [DEBUG] checking for provisioner in ".terraform/plugins/linux_amd64"
+2020/03/27 13:58:23 [DEBUG] checking for provisioner in "/home/sijeesh/.terraform.d/plugins"
+2020/03/27 13:58:23 [DEBUG] checking for provisioner in "/home/sijeesh/.terraform.d/plugins/linux_amd64"
+2020/03/27 13:58:23 [TRACE] Meta.Backend: backend <nil> does not support operations, so wrapping it in a local backend
+2020/03/27 13:58:23 [INFO] backend/local: starting Apply operation
+2020/03/27 13:58:23 [TRACE] backend/local: requesting state manager for workspace "default"
+2020/03/27 13:58:23 [TRACE] backend/local: state manager for workspace "default" will:
+ - read initial snapshot from terraform.tfstate
+ - write new snapshots to terraform.tfstate
+ - create any backup at terraform.tfstate.backup
+2020/03/27 13:58:23 [TRACE] backend/local: requesting state lock for workspace "default"
+2020/03/27 13:58:23 [TRACE] statemgr.Filesystem: preparing to manage state snapshots at terraform.tfstate
+2020/03/27 13:58:23 [TRACE] statemgr.Filesystem: existing snapshot has lineage "577fb8cf-c0fa-306b-3047-dcd53cb0237d" serial 1
+2020/03/27 13:58:23 [TRACE] statemgr.Filesystem: locking terraform.tfstate using fcntl flock
+2020/03/27 13:58:23 [TRACE] statemgr.Filesystem: writing lock metadata to .terraform.tfstate.lock.info
+2020/03/27 13:58:23 [TRACE] backend/local: reading remote state for workspace "default"
+2020/03/27 13:58:23 [TRACE] statemgr.Filesystem: reading latest snapshot from terraform.tfstate
+2020/03/27 13:58:23 [TRACE] statemgr.Filesystem: read snapshot with lineage "577fb8cf-c0fa-306b-3047-dcd53cb0237d" serial 1
+2020/03/27 13:58:23 [TRACE] backend/local: retrieving local state snapshot for workspace "default"
+2020/03/27 13:58:23 [TRACE] backend/local: building context for current working directory
+2020/03/27 13:58:23 [TRACE] terraform.NewContext: starting
+2020/03/27 13:58:23 [TRACE] terraform.NewContext: resolving provider version selections
+2020/03/27 13:58:23 [TRACE] terraform.NewContext: loading provider schemas
+2020/03/27 13:58:23 [TRACE] LoadSchemas: retrieving schema for provider type "simplivity"
+2020-03-27T13:58:23.391+0530 [INFO]  plugin: configuring client automatic mTLS
+2020-03-27T13:58:23.430+0530 [DEBUG] plugin: starting plugin: path=/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/examples/terraform-provider-simplivity args=[/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/examples/terraform-provider-simplivity]
+2020-03-27T13:58:23.430+0530 [DEBUG] plugin: plugin started: path=/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/examples/terraform-provider-simplivity pid=9097
+2020-03-27T13:58:23.430+0530 [DEBUG] plugin: waiting for RPC address: path=/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/examples/terraform-provider-simplivity
+2020-03-27T13:58:23.439+0530 [INFO]  plugin.terraform-provider-simplivity: configuring server automatic mTLS: timestamp=2020-03-27T13:58:23.439+0530
+2020-03-27T13:58:23.485+0530 [DEBUG] plugin.terraform-provider-simplivity: plugin address: address=/tmp/plugin705036408 network=unix timestamp=2020-03-27T13:58:23.485+0530
+2020-03-27T13:58:23.485+0530 [DEBUG] plugin: using plugin: version=5
+2020/03/27 13:58:23 [TRACE] GRPCProvider: GetSchema
+2020/03/27 13:58:23 [TRACE] GRPCProvider: Close
+2020-03-27T13:58:23.559+0530 [DEBUG] plugin: plugin process exited: path=/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/examples/terraform-provider-simplivity pid=9097
+2020-03-27T13:58:23.559+0530 [DEBUG] plugin: plugin exited
+2020/03/27 13:58:23 [TRACE] terraform.NewContext: complete
+2020/03/27 13:58:23 [TRACE] backend/local: finished building terraform.Context
+2020/03/27 13:58:23 [TRACE] backend/local: requesting interactive input, if necessary
+2020/03/27 13:58:23 [TRACE] Context.Input: Prompting for provider arguments
+2020/03/27 13:58:23 [TRACE] Context.Input: Provider provider.simplivity declared at virtual_machines.tf:1,1-22
+2020/03/27 13:58:23 [TRACE] Context.Input: Input for provider.simplivity: map[string]cty.Value{}
+2020/03/27 13:58:23 [TRACE] backend/local: running validation operation
+2020/03/27 13:58:23 [INFO] terraform: building graph: GraphTypeValidate
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2020/03/27 13:58:23 [TRACE] ConfigTransformer: Starting for path: 
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.ConfigTransformer with new graph:
+  simplivity_vm.example_vm - *terraform.NodeValidatableResource
+  ------
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.LocalTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.LocalTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.OutputTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.OutputTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.OrphanResourceInstanceTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.StateTransformer
+2020/03/27 13:58:23 [TRACE] StateTransformer: state is empty, so nothing to do
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.StateTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.OrphanOutputTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.OrphanOutputTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2020/03/27 13:58:23 [TRACE] AttachResourceConfigTransformer: attaching to "simplivity_vm.example_vm" (*terraform.NodeValidatableResource) config from virtual_machines.tf:7,1-38
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.AttachResourceConfigTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.RootVariableTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.MissingProvisionerTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.MissingProvisionerTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.ProvisionerTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.ProvisionerTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.ModuleVariableTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2020/03/27 13:58:23 [TRACE] ProviderConfigTransformer: attaching to "provider.simplivity" provider configuration from virtual_machines.tf:1,1-22
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+  provider.simplivity - *terraform.NodeApplyableProvider
+  simplivity_vm.example_vm - *terraform.NodeValidatableResource
+  ------
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2020/03/27 13:58:23 [TRACE] ProviderTransformer: simplivity_vm.example_vm is provided by provider.simplivity or inherited equivalent
+2020/03/27 13:58:23 [TRACE] ProviderTransformer: exact match for provider.simplivity serving simplivity_vm.example_vm
+2020/03/27 13:58:23 [DEBUG] ProviderTransformer: "simplivity_vm.example_vm" (*terraform.NodeValidatableResource) needs provider.simplivity
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer with new graph:
+  provider.simplivity - *terraform.NodeApplyableProvider
+  simplivity_vm.example_vm - *terraform.NodeValidatableResource
+    provider.simplivity - *terraform.NodeApplyableProvider
+  ------
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ParentProviderTransformer
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ParentProviderTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.graphTransformerMulti with new graph:
+  provider.simplivity - *terraform.NodeApplyableProvider
+  simplivity_vm.example_vm - *terraform.NodeValidatableResource
+    provider.simplivity - *terraform.NodeApplyableProvider
+  ------
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.RemovedModuleTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.RemovedModuleTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2020/03/27 13:58:23 [TRACE] AttachSchemaTransformer: attaching provider config schema to provider.simplivity
+2020/03/27 13:58:23 [TRACE] AttachSchemaTransformer: attaching resource schema to simplivity_vm.example_vm
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.AttachSchemaTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2020/03/27 13:58:23 [DEBUG] ReferenceTransformer: "simplivity_vm.example_vm" references: []
+2020/03/27 13:58:23 [DEBUG] ReferenceTransformer: "provider.simplivity" references: []
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.CountBoundaryTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.CountBoundaryTransformer with new graph:
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.simplivity - *terraform.NodeApplyableProvider
+    simplivity_vm.example_vm - *terraform.NodeValidatableResource
+  provider.simplivity - *terraform.NodeApplyableProvider
+  simplivity_vm.example_vm - *terraform.NodeValidatableResource
+    provider.simplivity - *terraform.NodeApplyableProvider
+  ------
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.ForcedCBDTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.ForcedCBDTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.CloseProviderTransformer with new graph:
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.simplivity - *terraform.NodeApplyableProvider
+    simplivity_vm.example_vm - *terraform.NodeValidatableResource
+  provider.simplivity - *terraform.NodeApplyableProvider
+  provider.simplivity (close) - *terraform.graphNodeCloseProvider
+    provider.simplivity - *terraform.NodeApplyableProvider
+    simplivity_vm.example_vm - *terraform.NodeValidatableResource
+  simplivity_vm.example_vm - *terraform.NodeValidatableResource
+    provider.simplivity - *terraform.NodeApplyableProvider
+  ------
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.CloseProvisionerTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.CloseProvisionerTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.RootTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.RootTransformer with new graph:
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.simplivity - *terraform.NodeApplyableProvider
+    simplivity_vm.example_vm - *terraform.NodeValidatableResource
+  provider.simplivity - *terraform.NodeApplyableProvider
+  provider.simplivity (close) - *terraform.graphNodeCloseProvider
+    provider.simplivity - *terraform.NodeApplyableProvider
+    simplivity_vm.example_vm - *terraform.NodeValidatableResource
+  root - terraform.graphNodeRoot
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.simplivity (close) - *terraform.graphNodeCloseProvider
+  simplivity_vm.example_vm - *terraform.NodeValidatableResource
+    provider.simplivity - *terraform.NodeApplyableProvider
+  ------
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.TransitiveReductionTransformer with new graph:
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    simplivity_vm.example_vm - *terraform.NodeValidatableResource
+  provider.simplivity - *terraform.NodeApplyableProvider
+  provider.simplivity (close) - *terraform.graphNodeCloseProvider
+    simplivity_vm.example_vm - *terraform.NodeValidatableResource
+  root - terraform.graphNodeRoot
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.simplivity (close) - *terraform.graphNodeCloseProvider
+  simplivity_vm.example_vm - *terraform.NodeValidatableResource
+    provider.simplivity - *terraform.NodeApplyableProvider
+  ------
+2020/03/27 13:58:23 [DEBUG] Starting graph walk: walkValidate
+2020/03/27 13:58:23 [TRACE] dag/walk: updating graph
+2020/03/27 13:58:23 [TRACE] dag/walk: added new vertex: "simplivity_vm.example_vm"
+2020/03/27 13:58:23 [TRACE] dag/walk: added new vertex: "provider.simplivity"
+2020/03/27 13:58:23 [TRACE] dag/walk: added new vertex: "meta.count-boundary (EachMode fixup)"
+2020/03/27 13:58:23 [TRACE] dag/walk: added new vertex: "provider.simplivity (close)"
+2020/03/27 13:58:23 [TRACE] dag/walk: added new vertex: "root"
+2020/03/27 13:58:23 [TRACE] dag/walk: added edge: "simplivity_vm.example_vm" waiting on "provider.simplivity"
+2020/03/27 13:58:23 [TRACE] dag/walk: added edge: "meta.count-boundary (EachMode fixup)" waiting on "simplivity_vm.example_vm"
+2020/03/27 13:58:23 [TRACE] dag/walk: added edge: "provider.simplivity (close)" waiting on "simplivity_vm.example_vm"
+2020/03/27 13:58:23 [TRACE] dag/walk: added edge: "root" waiting on "meta.count-boundary (EachMode fixup)"
+2020/03/27 13:58:23 [TRACE] dag/walk: added edge: "root" waiting on "provider.simplivity (close)"
+2020/03/27 13:58:23 [TRACE] dag/walk: dependencies changed for "root", sending new deps
+2020/03/27 13:58:23 [TRACE] dag/walk: dependencies changed for "simplivity_vm.example_vm", sending new deps
+2020/03/27 13:58:23 [TRACE] dag/walk: dependencies changed for "meta.count-boundary (EachMode fixup)", sending new deps
+2020/03/27 13:58:23 [TRACE] dag/walk: dependencies changed for "provider.simplivity (close)", sending new deps
+2020/03/27 13:58:23 [TRACE] dag/walk: visiting "provider.simplivity"
+2020/03/27 13:58:23 [TRACE] vertex "provider.simplivity": starting visit (*terraform.NodeApplyableProvider)
+2020/03/27 13:58:23 [TRACE] vertex "provider.simplivity": evaluating
+2020/03/27 13:58:23 [TRACE] [walkValidate] Entering eval tree: provider.simplivity
+2020/03/27 13:58:23 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/03/27 13:58:23 [TRACE] <root>: eval: *terraform.EvalInitProvider
+2020-03-27T13:58:23.560+0530 [INFO]  plugin: configuring client automatic mTLS
+2020-03-27T13:58:23.594+0530 [DEBUG] plugin: starting plugin: path=/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/examples/terraform-provider-simplivity args=[/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/examples/terraform-provider-simplivity]
+2020-03-27T13:58:23.595+0530 [DEBUG] plugin: plugin started: path=/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/examples/terraform-provider-simplivity pid=9110
+2020-03-27T13:58:23.595+0530 [DEBUG] plugin: waiting for RPC address: path=/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/examples/terraform-provider-simplivity
+2020-03-27T13:58:23.603+0530 [INFO]  plugin.terraform-provider-simplivity: configuring server automatic mTLS: timestamp=2020-03-27T13:58:23.603+0530
+2020-03-27T13:58:23.638+0530 [DEBUG] plugin.terraform-provider-simplivity: plugin address: address=/tmp/plugin752653713 network=unix timestamp=2020-03-27T13:58:23.638+0530
+2020-03-27T13:58:23.638+0530 [DEBUG] plugin: using plugin: version=5
+2020/03/27 13:58:23 [TRACE] BuiltinEvalContext: Initialized "simplivity" provider for provider.simplivity
+2020/03/27 13:58:23 [TRACE] <root>: eval: terraform.EvalNoop
+2020/03/27 13:58:23 [TRACE] <root>: eval: *terraform.EvalOpFilter
+2020/03/27 13:58:23 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/03/27 13:58:23 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2020/03/27 13:58:23 [TRACE] <root>: eval: *terraform.EvalValidateProvider
+2020/03/27 13:58:23 [TRACE] buildProviderConfig for provider.simplivity: using explicit config only
+2020/03/27 13:58:23 [TRACE] GRPCProvider: GetSchema
+2020/03/27 13:58:23 [TRACE] GRPCProvider: PrepareProviderConfig
+2020/03/27 13:58:23 [TRACE] <root>: eval: terraform.EvalNoop
+2020/03/27 13:58:23 [TRACE] <root>: eval: terraform.EvalNoop
+2020/03/27 13:58:23 [TRACE] [walkValidate] Exiting eval tree: provider.simplivity
+2020/03/27 13:58:23 [TRACE] vertex "provider.simplivity": visit complete
+2020/03/27 13:58:23 [TRACE] dag/walk: visiting "simplivity_vm.example_vm"
+2020/03/27 13:58:23 [TRACE] vertex "simplivity_vm.example_vm": starting visit (*terraform.NodeValidatableResource)
+2020/03/27 13:58:23 [TRACE] vertex "simplivity_vm.example_vm": evaluating
+2020/03/27 13:58:23 [TRACE] [walkValidate] Entering eval tree: simplivity_vm.example_vm
+2020/03/27 13:58:23 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/03/27 13:58:23 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2020/03/27 13:58:23 [TRACE] <root>: eval: *terraform.EvalValidateResource
+2020/03/27 13:58:23 [TRACE] GRPCProvider: ValidateResourceTypeConfig
+2020/03/27 13:58:23 [TRACE] [walkValidate] Exiting eval tree: simplivity_vm.example_vm
+2020/03/27 13:58:23 [TRACE] vertex "simplivity_vm.example_vm": visit complete
+2020/03/27 13:58:23 [TRACE] dag/walk: visiting "provider.simplivity (close)"
+2020/03/27 13:58:23 [TRACE] vertex "provider.simplivity (close)": starting visit (*terraform.graphNodeCloseProvider)
+2020/03/27 13:58:23 [TRACE] vertex "provider.simplivity (close)": evaluating
+2020/03/27 13:58:23 [TRACE] [walkValidate] Entering eval tree: provider.simplivity (close)
+2020/03/27 13:58:23 [TRACE] <root>: eval: *terraform.EvalCloseProvider
+2020/03/27 13:58:23 [TRACE] GRPCProvider: Close
+2020/03/27 13:58:23 [TRACE] dag/walk: visiting "meta.count-boundary (EachMode fixup)"
+2020/03/27 13:58:23 [TRACE] vertex "meta.count-boundary (EachMode fixup)": starting visit (*terraform.NodeCountBoundary)
+2020/03/27 13:58:23 [TRACE] vertex "meta.count-boundary (EachMode fixup)": evaluating
+2020/03/27 13:58:23 [TRACE] [walkValidate] Entering eval tree: meta.count-boundary (EachMode fixup)
+2020/03/27 13:58:23 [TRACE] <root>: eval: *terraform.EvalCountFixZeroOneBoundaryGlobal
+2020/03/27 13:58:23 [TRACE] [walkValidate] Exiting eval tree: meta.count-boundary (EachMode fixup)
+2020/03/27 13:58:23 [TRACE] vertex "meta.count-boundary (EachMode fixup)": visit complete
+2020-03-27T13:58:23.710+0530 [DEBUG] plugin: plugin process exited: path=/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/examples/terraform-provider-simplivity pid=9110
+2020-03-27T13:58:23.710+0530 [DEBUG] plugin: plugin exited
+2020/03/27 13:58:23 [TRACE] [walkValidate] Exiting eval tree: provider.simplivity (close)
+2020/03/27 13:58:23 [TRACE] vertex "provider.simplivity (close)": visit complete
+2020/03/27 13:58:23 [TRACE] dag/walk: visiting "root"
+2020/03/27 13:58:23 [TRACE] vertex "root": starting visit (terraform.graphNodeRoot)
+2020/03/27 13:58:23 [TRACE] vertex "root": visit complete
+2020/03/27 13:58:23 [INFO] backend/local: apply calling Refresh
+2020/03/27 13:58:23 [INFO] terraform: building graph: GraphTypeRefresh
+2020/03/27 13:58:23 [TRACE] No managed resources in state during refresh; skipping managed resource transformer
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2020/03/27 13:58:23 [TRACE] ConfigTransformer: Starting for path: 
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.ConfigTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.OrphanResourceInstanceTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.StateTransformer
+2020/03/27 13:58:23 [TRACE] StateTransformer: state is empty, so nothing to do
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.StateTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.AttachResourceConfigTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.RootVariableTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.LocalTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.LocalTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.OutputTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.OutputTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.ModuleVariableTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2020/03/27 13:58:23 [TRACE] ProviderConfigTransformer: attaching to "provider.simplivity" provider configuration from virtual_machines.tf:1,1-22
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+  provider.simplivity - *terraform.NodeApplyableProvider
+  ------
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2020/03/27 13:58:23 [DEBUG] pruning unused provider.simplivity
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer with new graph:
+  ------
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ParentProviderTransformer
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ParentProviderTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.graphTransformerMulti (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.AttachSchemaTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.AttachDependenciesTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.AttachDependenciesTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.CloseProviderTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.RootTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.RootTransformer with new graph:
+  root - terraform.graphNodeRoot
+  ------
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.TransitiveReductionTransformer (no changes)
+2020/03/27 13:58:23 [DEBUG] Starting graph walk: walkRefresh
+2020/03/27 13:58:23 [TRACE] dag/walk: updating graph
+2020/03/27 13:58:23 [TRACE] dag/walk: added new vertex: "root"
+2020/03/27 13:58:23 [TRACE] dag/walk: visiting "root"
+2020/03/27 13:58:23 [TRACE] vertex "root": starting visit (terraform.graphNodeRoot)
+2020/03/27 13:58:23 [TRACE] vertex "root": visit complete
+2020/03/27 13:58:23 [INFO] backend/local: apply calling Plan
+2020/03/27 13:58:23 [INFO] terraform: building graph: GraphTypePlan
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2020/03/27 13:58:23 [TRACE] ConfigTransformer: Starting for path: 
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.ConfigTransformer with new graph:
+  simplivity_vm.example_vm - *terraform.NodePlannableResource
+  ------
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.LocalTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.LocalTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.OutputTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.OutputTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.OrphanResourceInstanceTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.StateTransformer
+2020/03/27 13:58:23 [TRACE] StateTransformer: state is empty, so nothing to do
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.StateTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.OrphanOutputTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.OrphanOutputTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2020/03/27 13:58:23 [TRACE] AttachResourceConfigTransformer: attaching to "simplivity_vm.example_vm" (*terraform.NodePlannableResource) config from virtual_machines.tf:7,1-38
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.AttachResourceConfigTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.RootVariableTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.MissingProvisionerTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.MissingProvisionerTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.ProvisionerTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.ProvisionerTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.ModuleVariableTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2020/03/27 13:58:23 [TRACE] ProviderConfigTransformer: attaching to "provider.simplivity" provider configuration from virtual_machines.tf:1,1-22
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+  provider.simplivity - *terraform.NodeApplyableProvider
+  simplivity_vm.example_vm - *terraform.NodePlannableResource
+  ------
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2020/03/27 13:58:23 [TRACE] ProviderTransformer: simplivity_vm.example_vm is provided by provider.simplivity or inherited equivalent
+2020/03/27 13:58:23 [TRACE] ProviderTransformer: exact match for provider.simplivity serving simplivity_vm.example_vm
+2020/03/27 13:58:23 [DEBUG] ProviderTransformer: "simplivity_vm.example_vm" (*terraform.NodePlannableResource) needs provider.simplivity
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer with new graph:
+  provider.simplivity - *terraform.NodeApplyableProvider
+  simplivity_vm.example_vm - *terraform.NodePlannableResource
+    provider.simplivity - *terraform.NodeApplyableProvider
+  ------
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ParentProviderTransformer
+2020/03/27 13:58:23 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ParentProviderTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.graphTransformerMulti with new graph:
+  provider.simplivity - *terraform.NodeApplyableProvider
+  simplivity_vm.example_vm - *terraform.NodePlannableResource
+    provider.simplivity - *terraform.NodeApplyableProvider
+  ------
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.RemovedModuleTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.RemovedModuleTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2020/03/27 13:58:23 [TRACE] AttachSchemaTransformer: attaching provider config schema to provider.simplivity
+2020/03/27 13:58:23 [TRACE] AttachSchemaTransformer: attaching resource schema to simplivity_vm.example_vm
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.AttachSchemaTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2020/03/27 13:58:23 [DEBUG] ReferenceTransformer: "simplivity_vm.example_vm" references: []
+2020/03/27 13:58:23 [DEBUG] ReferenceTransformer: "provider.simplivity" references: []
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.CountBoundaryTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.CountBoundaryTransformer with new graph:
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.simplivity - *terraform.NodeApplyableProvider
+    simplivity_vm.example_vm - *terraform.NodePlannableResource
+  provider.simplivity - *terraform.NodeApplyableProvider
+  simplivity_vm.example_vm - *terraform.NodePlannableResource
+    provider.simplivity - *terraform.NodeApplyableProvider
+  ------
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.ForcedCBDTransformer
+2020/03/27 13:58:23 [TRACE] ForcedCBDTransformer: "simplivity_vm.example_vm" (*terraform.NodePlannableResource) has no CBD descendent, so skipping
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.ForcedCBDTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.CloseProviderTransformer with new graph:
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.simplivity - *terraform.NodeApplyableProvider
+    simplivity_vm.example_vm - *terraform.NodePlannableResource
+  provider.simplivity - *terraform.NodeApplyableProvider
+  provider.simplivity (close) - *terraform.graphNodeCloseProvider
+    provider.simplivity - *terraform.NodeApplyableProvider
+    simplivity_vm.example_vm - *terraform.NodePlannableResource
+  simplivity_vm.example_vm - *terraform.NodePlannableResource
+    provider.simplivity - *terraform.NodeApplyableProvider
+  ------
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.CloseProvisionerTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.CloseProvisionerTransformer (no changes)
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.RootTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.RootTransformer with new graph:
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.simplivity - *terraform.NodeApplyableProvider
+    simplivity_vm.example_vm - *terraform.NodePlannableResource
+  provider.simplivity - *terraform.NodeApplyableProvider
+  provider.simplivity (close) - *terraform.graphNodeCloseProvider
+    provider.simplivity - *terraform.NodeApplyableProvider
+    simplivity_vm.example_vm - *terraform.NodePlannableResource
+  root - terraform.graphNodeRoot
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.simplivity (close) - *terraform.graphNodeCloseProvider
+  simplivity_vm.example_vm - *terraform.NodePlannableResource
+    provider.simplivity - *terraform.NodeApplyableProvider
+  ------
+2020/03/27 13:58:23 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2020/03/27 13:58:23 [TRACE] Completed graph transform *terraform.TransitiveReductionTransformer with new graph:
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    simplivity_vm.example_vm - *terraform.NodePlannableResource
+  provider.simplivity - *terraform.NodeApplyableProvider
+  provider.simplivity (close) - *terraform.graphNodeCloseProvider
+    simplivity_vm.example_vm - *terraform.NodePlannableResource
+  root - terraform.graphNodeRoot
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.simplivity (close) - *terraform.graphNodeCloseProvider
+  simplivity_vm.example_vm - *terraform.NodePlannableResource
+    provider.simplivity - *terraform.NodeApplyableProvider
+  ------
+2020/03/27 13:58:23 [DEBUG] Starting graph walk: walkPlan
+2020/03/27 13:58:23 [TRACE] dag/walk: updating graph
+2020/03/27 13:58:23 [TRACE] dag/walk: added new vertex: "meta.count-boundary (EachMode fixup)"
+2020/03/27 13:58:23 [TRACE] dag/walk: added new vertex: "provider.simplivity (close)"
+2020/03/27 13:58:23 [TRACE] dag/walk: added new vertex: "root"
+2020/03/27 13:58:23 [TRACE] dag/walk: added new vertex: "simplivity_vm.example_vm"
+2020/03/27 13:58:23 [TRACE] dag/walk: added new vertex: "provider.simplivity"
+2020/03/27 13:58:23 [TRACE] dag/walk: added edge: "root" waiting on "meta.count-boundary (EachMode fixup)"
+2020/03/27 13:58:23 [TRACE] dag/walk: added edge: "root" waiting on "provider.simplivity (close)"
+2020/03/27 13:58:23 [TRACE] dag/walk: added edge: "simplivity_vm.example_vm" waiting on "provider.simplivity"
+2020/03/27 13:58:23 [TRACE] dag/walk: added edge: "meta.count-boundary (EachMode fixup)" waiting on "simplivity_vm.example_vm"
+2020/03/27 13:58:23 [TRACE] dag/walk: added edge: "provider.simplivity (close)" waiting on "simplivity_vm.example_vm"
+2020/03/27 13:58:23 [TRACE] dag/walk: dependencies changed for "simplivity_vm.example_vm", sending new deps
+2020/03/27 13:58:23 [TRACE] dag/walk: dependencies changed for "meta.count-boundary (EachMode fixup)", sending new deps
+2020/03/27 13:58:23 [TRACE] dag/walk: dependencies changed for "provider.simplivity (close)", sending new deps
+2020/03/27 13:58:23 [TRACE] dag/walk: dependencies changed for "root", sending new deps
+2020/03/27 13:58:23 [TRACE] dag/walk: visiting "provider.simplivity"
+2020/03/27 13:58:23 [TRACE] vertex "provider.simplivity": starting visit (*terraform.NodeApplyableProvider)
+2020/03/27 13:58:23 [TRACE] vertex "provider.simplivity": evaluating
+2020/03/27 13:58:23 [TRACE] [walkPlan] Entering eval tree: provider.simplivity
+2020/03/27 13:58:23 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/03/27 13:58:23 [TRACE] <root>: eval: *terraform.EvalInitProvider
+2020-03-27T13:58:23.711+0530 [INFO]  plugin: configuring client automatic mTLS
+2020-03-27T13:58:23.745+0530 [DEBUG] plugin: starting plugin: path=/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/examples/terraform-provider-simplivity args=[/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/examples/terraform-provider-simplivity]
+2020-03-27T13:58:23.745+0530 [DEBUG] plugin: plugin started: path=/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/examples/terraform-provider-simplivity pid=9122
+2020-03-27T13:58:23.745+0530 [DEBUG] plugin: waiting for RPC address: path=/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/examples/terraform-provider-simplivity
+2020-03-27T13:58:23.754+0530 [INFO]  plugin.terraform-provider-simplivity: configuring server automatic mTLS: timestamp=2020-03-27T13:58:23.754+0530
+2020-03-27T13:58:23.788+0530 [DEBUG] plugin.terraform-provider-simplivity: plugin address: address=/tmp/plugin027859771 network=unix timestamp=2020-03-27T13:58:23.788+0530
+2020-03-27T13:58:23.788+0530 [DEBUG] plugin: using plugin: version=5
+2020/03/27 13:58:23 [TRACE] BuiltinEvalContext: Initialized "simplivity" provider for provider.simplivity
+2020/03/27 13:58:23 [TRACE] <root>: eval: terraform.EvalNoop
+2020/03/27 13:58:23 [TRACE] <root>: eval: terraform.EvalNoop
+2020/03/27 13:58:23 [TRACE] <root>: eval: *terraform.EvalOpFilter
+2020/03/27 13:58:23 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/03/27 13:58:23 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2020/03/27 13:58:23 [TRACE] <root>: eval: *terraform.EvalOpFilter
+2020/03/27 13:58:23 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/03/27 13:58:23 [TRACE] <root>: eval: *terraform.EvalConfigProvider
+2020/03/27 13:58:23 [TRACE] buildProviderConfig for provider.simplivity: using explicit config only
+2020/03/27 13:58:23 [TRACE] GRPCProvider: GetSchema
+2020/03/27 13:58:23 [TRACE] GRPCProvider: Configure
+2020/03/27 13:58:24 [TRACE] [walkPlan] Exiting eval tree: provider.simplivity
+2020/03/27 13:58:24 [TRACE] vertex "provider.simplivity": visit complete
+2020/03/27 13:58:24 [TRACE] dag/walk: visiting "simplivity_vm.example_vm"
+2020/03/27 13:58:24 [TRACE] vertex "simplivity_vm.example_vm": starting visit (*terraform.NodePlannableResource)
+2020/03/27 13:58:24 [TRACE] vertex "simplivity_vm.example_vm": evaluating
+2020/03/27 13:58:24 [TRACE] [walkPlan] Entering eval tree: simplivity_vm.example_vm
+2020/03/27 13:58:24 [TRACE] <root>: eval: *terraform.EvalWriteResourceState
+2020/03/27 13:58:24 [TRACE] [walkPlan] Exiting eval tree: simplivity_vm.example_vm
+2020/03/27 13:58:24 [TRACE] vertex "simplivity_vm.example_vm": expanding dynamic subgraph
+2020/03/27 13:58:24 [TRACE] Executing graph transform *terraform.ResourceCountTransformer
+2020/03/27 13:58:24 [TRACE] Completed graph transform *terraform.ResourceCountTransformer with new graph:
+  simplivity_vm.example_vm - *terraform.NodePlannableResourceInstance
+  ------
+2020/03/27 13:58:24 [TRACE] Executing graph transform *terraform.OrphanResourceCountTransformer
+2020/03/27 13:58:24 [TRACE] Completed graph transform *terraform.OrphanResourceCountTransformer (no changes)
+2020/03/27 13:58:24 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/03/27 13:58:24 [DEBUG] Resource instance state not found for node "simplivity_vm.example_vm", instance simplivity_vm.example_vm
+2020/03/27 13:58:24 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/03/27 13:58:24 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/03/27 13:58:24 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/03/27 13:58:24 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2020/03/27 13:58:24 [DEBUG] ReferenceTransformer: "simplivity_vm.example_vm" references: []
+2020/03/27 13:58:24 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2020/03/27 13:58:24 [TRACE] Executing graph transform *terraform.RootTransformer
+2020/03/27 13:58:24 [TRACE] Completed graph transform *terraform.RootTransformer (no changes)
+2020/03/27 13:58:24 [TRACE] vertex "simplivity_vm.example_vm": entering dynamic subgraph
+2020/03/27 13:58:24 [TRACE] dag/walk: updating graph
+2020/03/27 13:58:24 [TRACE] dag/walk: added new vertex: "simplivity_vm.example_vm"
+2020/03/27 13:58:24 [TRACE] dag/walk: visiting "simplivity_vm.example_vm"
+2020/03/27 13:58:24 [TRACE] vertex "simplivity_vm.example_vm": starting visit (*terraform.NodePlannableResourceInstance)
+2020/03/27 13:58:24 [TRACE] vertex "simplivity_vm.example_vm": evaluating
+2020/03/27 13:58:24 [TRACE] [walkPlan] Entering eval tree: simplivity_vm.example_vm
+2020/03/27 13:58:24 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/03/27 13:58:24 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2020/03/27 13:58:24 [TRACE] <root>: eval: *terraform.EvalReadState
+2020/03/27 13:58:24 [TRACE] EvalReadState: reading state for simplivity_vm.example_vm
+2020/03/27 13:58:24 [TRACE] EvalReadState: no state present for simplivity_vm.example_vm
+2020/03/27 13:58:24 [TRACE] <root>: eval: *terraform.EvalValidateSelfRef
+2020/03/27 13:58:24 [TRACE] <root>: eval: *terraform.EvalDiff
+2020/03/27 13:58:24 [TRACE] Re-validating config for "simplivity_vm.example_vm"
+2020/03/27 13:58:24 [TRACE] GRPCProvider: ValidateResourceTypeConfig
+2020/03/27 13:58:24 [TRACE] GRPCProvider: PlanResourceChange
+2020/03/27 13:58:24 [TRACE] <root>: eval: *terraform.EvalCheckPreventDestroy
+2020/03/27 13:58:24 [TRACE] <root>: eval: *terraform.EvalWriteState
+2020/03/27 13:58:24 [TRACE] EvalWriteState: writing current state object for simplivity_vm.example_vm
+2020/03/27 13:58:24 [TRACE] <root>: eval: *terraform.EvalWriteDiff
+2020/03/27 13:58:24 [TRACE] EvalWriteDiff: recorded Create change for simplivity_vm.example_vm
+2020/03/27 13:58:24 [TRACE] [walkPlan] Exiting eval tree: simplivity_vm.example_vm
+2020/03/27 13:58:24 [TRACE] vertex "simplivity_vm.example_vm": visit complete
+2020/03/27 13:58:24 [TRACE] vertex "simplivity_vm.example_vm": dynamic subgraph completed successfully
+2020/03/27 13:58:24 [TRACE] vertex "simplivity_vm.example_vm": visit complete
+2020/03/27 13:58:24 [TRACE] dag/walk: visiting "meta.count-boundary (EachMode fixup)"
+2020/03/27 13:58:24 [TRACE] vertex "meta.count-boundary (EachMode fixup)": starting visit (*terraform.NodeCountBoundary)
+2020/03/27 13:58:24 [TRACE] vertex "meta.count-boundary (EachMode fixup)": evaluating
+2020/03/27 13:58:24 [TRACE] [walkPlan] Entering eval tree: meta.count-boundary (EachMode fixup)
+2020/03/27 13:58:24 [TRACE] <root>: eval: *terraform.EvalCountFixZeroOneBoundaryGlobal
+2020/03/27 13:58:24 [TRACE] [walkPlan] Exiting eval tree: meta.count-boundary (EachMode fixup)
+2020/03/27 13:58:24 [TRACE] vertex "meta.count-boundary (EachMode fixup)": visit complete
+2020/03/27 13:58:24 [TRACE] dag/walk: visiting "provider.simplivity (close)"
+2020/03/27 13:58:24 [TRACE] vertex "provider.simplivity (close)": starting visit (*terraform.graphNodeCloseProvider)
+2020/03/27 13:58:24 [TRACE] vertex "provider.simplivity (close)": evaluating
+2020/03/27 13:58:24 [TRACE] [walkPlan] Entering eval tree: provider.simplivity (close)
+2020/03/27 13:58:24 [TRACE] <root>: eval: *terraform.EvalCloseProvider
+2020/03/27 13:58:24 [TRACE] GRPCProvider: Close
+2020-03-27T13:58:24.188+0530 [DEBUG] plugin: plugin process exited: path=/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/examples/terraform-provider-simplivity pid=9122
+2020-03-27T13:58:24.188+0530 [DEBUG] plugin: plugin exited
+2020/03/27 13:58:24 [TRACE] [walkPlan] Exiting eval tree: provider.simplivity (close)
+2020/03/27 13:58:24 [TRACE] vertex "provider.simplivity (close)": visit complete
+2020/03/27 13:58:24 [TRACE] dag/walk: visiting "root"
+2020/03/27 13:58:24 [TRACE] vertex "root": starting visit (terraform.graphNodeRoot)
+2020/03/27 13:58:24 [TRACE] vertex "root": visit complete
+2020/03/27 13:58:24 [DEBUG] command: asking for input: "Do you want to perform these actions?"
+2020/03/27 13:58:26 [INFO] backend/local: apply calling Apply
+2020/03/27 13:58:26 [INFO] terraform: building graph: GraphTypeApply
+2020/03/27 13:58:26 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2020/03/27 13:58:26 [TRACE] ConfigTransformer: Starting for path: 
+2020/03/27 13:58:26 [TRACE] Completed graph transform *terraform.ConfigTransformer with new graph:
+  simplivity_vm.example_vm (prepare state) - *terraform.NodeApplyableResource
+  ------
+2020/03/27 13:58:26 [TRACE] Executing graph transform *terraform.DiffTransformer
+2020/03/27 13:58:26 [TRACE] DiffTransformer starting
+2020/03/27 13:58:26 [TRACE] DiffTransformer: found Create change for simplivity_vm.example_vm 
+2020/03/27 13:58:26 [TRACE] DiffTransformer: simplivity_vm.example_vm will be represented by simplivity_vm.example_vm
+2020/03/27 13:58:26 [TRACE] DiffTransformer complete
+2020/03/27 13:58:26 [TRACE] Completed graph transform *terraform.DiffTransformer with new graph:
+  simplivity_vm.example_vm - *terraform.NodeApplyableResourceInstance
+    simplivity_vm.example_vm (prepare state) - *terraform.NodeApplyableResource
+  simplivity_vm.example_vm (prepare state) - *terraform.NodeApplyableResource
+  ------
+2020/03/27 13:58:26 [TRACE] Executing graph transform *terraform.OrphanResourceTransformer
+2020/03/27 13:58:26 [TRACE] Completed graph transform *terraform.OrphanResourceTransformer (no changes)
+2020/03/27 13:58:26 [TRACE] Executing graph transform *terraform.OrphanOutputTransformer
+2020/03/27 13:58:26 [TRACE] Completed graph transform *terraform.OrphanOutputTransformer (no changes)
+2020/03/27 13:58:26 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2020/03/27 13:58:26 [TRACE] AttachResourceConfigTransformer: attaching to "simplivity_vm.example_vm (prepare state)" (*terraform.NodeApplyableResource) config from virtual_machines.tf:7,1-38
+2020/03/27 13:58:26 [TRACE] AttachResourceConfigTransformer: attaching to "simplivity_vm.example_vm" (*terraform.NodeApplyableResourceInstance) config from virtual_machines.tf:7,1-38
+2020/03/27 13:58:26 [TRACE] Completed graph transform *terraform.AttachResourceConfigTransformer (no changes)
+2020/03/27 13:58:26 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/03/27 13:58:26 [DEBUG] Resource state not found for node "simplivity_vm.example_vm", instance simplivity_vm.example_vm
+2020/03/27 13:58:26 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/03/27 13:58:26 [TRACE] Executing graph transform *terraform.MissingProvisionerTransformer
+2020/03/27 13:58:26 [TRACE] Completed graph transform *terraform.MissingProvisionerTransformer (no changes)
+2020/03/27 13:58:26 [TRACE] Executing graph transform *terraform.ProvisionerTransformer
+2020/03/27 13:58:26 [TRACE] Completed graph transform *terraform.ProvisionerTransformer (no changes)
+2020/03/27 13:58:26 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2020/03/27 13:58:26 [TRACE] Completed graph transform *terraform.RootVariableTransformer (no changes)
+2020/03/27 13:58:26 [TRACE] Executing graph transform *terraform.LocalTransformer
+2020/03/27 13:58:26 [TRACE] Completed graph transform *terraform.LocalTransformer (no changes)
+2020/03/27 13:58:26 [TRACE] Executing graph transform *terraform.OutputTransformer
+2020/03/27 13:58:26 [TRACE] Completed graph transform *terraform.OutputTransformer (no changes)
+2020/03/27 13:58:26 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2020/03/27 13:58:26 [TRACE] Completed graph transform *terraform.ModuleVariableTransformer (no changes)
+2020/03/27 13:58:26 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2020/03/27 13:58:26 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2020/03/27 13:58:26 [TRACE] ProviderConfigTransformer: attaching to "provider.simplivity" provider configuration from virtual_machines.tf:1,1-22
+2020/03/27 13:58:26 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+  provider.simplivity - *terraform.NodeApplyableProvider
+  simplivity_vm.example_vm - *terraform.NodeApplyableResourceInstance
+    simplivity_vm.example_vm (prepare state) - *terraform.NodeApplyableResource
+  simplivity_vm.example_vm (prepare state) - *terraform.NodeApplyableResource
+  ------
+2020/03/27 13:58:26 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2020/03/27 13:58:26 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer (no changes)
+2020/03/27 13:58:26 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2020/03/27 13:58:26 [TRACE] ProviderTransformer: simplivity_vm.example_vm (prepare state) is provided by provider.simplivity or inherited equivalent
+2020/03/27 13:58:26 [TRACE] ProviderTransformer: simplivity_vm.example_vm is provided by provider.simplivity or inherited equivalent
+2020/03/27 13:58:26 [TRACE] ProviderTransformer: exact match for provider.simplivity serving simplivity_vm.example_vm (prepare state)
+2020/03/27 13:58:26 [DEBUG] ProviderTransformer: "simplivity_vm.example_vm (prepare state)" (*terraform.NodeApplyableResource) needs provider.simplivity
+2020/03/27 13:58:26 [TRACE] ProviderTransformer: exact match for provider.simplivity serving simplivity_vm.example_vm
+2020/03/27 13:58:26 [DEBUG] ProviderTransformer: "simplivity_vm.example_vm" (*terraform.NodeApplyableResourceInstance) needs provider.simplivity
+2020/03/27 13:58:26 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer with new graph:
+  provider.simplivity - *terraform.NodeApplyableProvider
+  simplivity_vm.example_vm - *terraform.NodeApplyableResourceInstance
+    provider.simplivity - *terraform.NodeApplyableProvider
+    simplivity_vm.example_vm (prepare state) - *terraform.NodeApplyableResource
+  simplivity_vm.example_vm (prepare state) - *terraform.NodeApplyableResource
+    provider.simplivity - *terraform.NodeApplyableProvider
+  ------
+2020/03/27 13:58:26 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2020/03/27 13:58:26 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer (no changes)
+2020/03/27 13:58:26 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ParentProviderTransformer
+2020/03/27 13:58:26 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ParentProviderTransformer (no changes)
+2020/03/27 13:58:26 [TRACE] Completed graph transform *terraform.graphTransformerMulti with new graph:
+  provider.simplivity - *terraform.NodeApplyableProvider
+  simplivity_vm.example_vm - *terraform.NodeApplyableResourceInstance
+    provider.simplivity - *terraform.NodeApplyableProvider
+    simplivity_vm.example_vm (prepare state) - *terraform.NodeApplyableResource
+  simplivity_vm.example_vm (prepare state) - *terraform.NodeApplyableResource
+    provider.simplivity - *terraform.NodeApplyableProvider
+  ------
+2020/03/27 13:58:26 [TRACE] Executing graph transform *terraform.RemovedModuleTransformer
+2020/03/27 13:58:26 [TRACE] Completed graph transform *terraform.RemovedModuleTransformer (no changes)
+2020/03/27 13:58:26 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2020/03/27 13:58:26 [TRACE] AttachSchemaTransformer: attaching provider config schema to provider.simplivity
+2020/03/27 13:58:26 [TRACE] AttachSchemaTransformer: attaching resource schema to simplivity_vm.example_vm (prepare state)
+2020/03/27 13:58:26 [TRACE] AttachSchemaTransformer: attaching resource schema to simplivity_vm.example_vm
+2020/03/27 13:58:26 [TRACE] Completed graph transform *terraform.AttachSchemaTransformer (no changes)
+2020/03/27 13:58:26 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2020/03/27 13:58:26 [DEBUG] ReferenceTransformer: "provider.simplivity" references: []
+2020/03/27 13:58:26 [DEBUG] ReferenceTransformer: "simplivity_vm.example_vm (prepare state)" references: []
+2020/03/27 13:58:26 [DEBUG] ReferenceTransformer: "simplivity_vm.example_vm" references: []
+2020/03/27 13:58:26 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2020/03/27 13:58:26 [TRACE] Executing graph transform *terraform.AttachDependenciesTransformer
+2020/03/27 13:58:26 [TRACE] AttachDependenciesTransformer: simplivity_vm.example_vm depends on []
+2020/03/27 13:58:26 [TRACE] Completed graph transform *terraform.AttachDependenciesTransformer (no changes)
+2020/03/27 13:58:26 [TRACE] Executing graph transform *terraform.DestroyEdgeTransformer
+2020/03/27 13:58:26 [TRACE] Completed graph transform *terraform.DestroyEdgeTransformer (no changes)
+2020/03/27 13:58:26 [TRACE] Executing graph transform *terraform.CBDEdgeTransformer
+2020/03/27 13:58:26 [TRACE] Completed graph transform *terraform.CBDEdgeTransformer (no changes)
+2020/03/27 13:58:26 [TRACE] Executing graph transform *terraform.PruneUnusedValuesTransformer
+2020/03/27 13:58:26 [TRACE] Completed graph transform *terraform.PruneUnusedValuesTransformer (no changes)
+2020/03/27 13:58:26 [TRACE] Executing graph transform *terraform.CountBoundaryTransformer
+2020/03/27 13:58:26 [TRACE] Completed graph transform *terraform.CountBoundaryTransformer with new graph:
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.simplivity - *terraform.NodeApplyableProvider
+    simplivity_vm.example_vm - *terraform.NodeApplyableResourceInstance
+    simplivity_vm.example_vm (prepare state) - *terraform.NodeApplyableResource
+  provider.simplivity - *terraform.NodeApplyableProvider
+  simplivity_vm.example_vm - *terraform.NodeApplyableResourceInstance
+    provider.simplivity - *terraform.NodeApplyableProvider
+    simplivity_vm.example_vm (prepare state) - *terraform.NodeApplyableResource
+  simplivity_vm.example_vm (prepare state) - *terraform.NodeApplyableResource
+    provider.simplivity - *terraform.NodeApplyableProvider
+  ------
+2020/03/27 13:58:26 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/03/27 13:58:26 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/03/27 13:58:26 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2020/03/27 13:58:26 [TRACE] Completed graph transform *terraform.CloseProviderTransformer with new graph:
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.simplivity - *terraform.NodeApplyableProvider
+    simplivity_vm.example_vm - *terraform.NodeApplyableResourceInstance
+    simplivity_vm.example_vm (prepare state) - *terraform.NodeApplyableResource
+  provider.simplivity - *terraform.NodeApplyableProvider
+  provider.simplivity (close) - *terraform.graphNodeCloseProvider
+    provider.simplivity - *terraform.NodeApplyableProvider
+    simplivity_vm.example_vm - *terraform.NodeApplyableResourceInstance
+    simplivity_vm.example_vm (prepare state) - *terraform.NodeApplyableResource
+  simplivity_vm.example_vm - *terraform.NodeApplyableResourceInstance
+    provider.simplivity - *terraform.NodeApplyableProvider
+    simplivity_vm.example_vm (prepare state) - *terraform.NodeApplyableResource
+  simplivity_vm.example_vm (prepare state) - *terraform.NodeApplyableResource
+    provider.simplivity - *terraform.NodeApplyableProvider
+  ------
+2020/03/27 13:58:26 [TRACE] Executing graph transform *terraform.CloseProvisionerTransformer
+2020/03/27 13:58:26 [TRACE] Completed graph transform *terraform.CloseProvisionerTransformer (no changes)
+2020/03/27 13:58:26 [TRACE] Executing graph transform *terraform.RootTransformer
+2020/03/27 13:58:26 [TRACE] Completed graph transform *terraform.RootTransformer with new graph:
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.simplivity - *terraform.NodeApplyableProvider
+    simplivity_vm.example_vm - *terraform.NodeApplyableResourceInstance
+    simplivity_vm.example_vm (prepare state) - *terraform.NodeApplyableResource
+  provider.simplivity - *terraform.NodeApplyableProvider
+  provider.simplivity (close) - *terraform.graphNodeCloseProvider
+    provider.simplivity - *terraform.NodeApplyableProvider
+    simplivity_vm.example_vm - *terraform.NodeApplyableResourceInstance
+    simplivity_vm.example_vm (prepare state) - *terraform.NodeApplyableResource
+  root - terraform.graphNodeRoot
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.simplivity (close) - *terraform.graphNodeCloseProvider
+  simplivity_vm.example_vm - *terraform.NodeApplyableResourceInstance
+    provider.simplivity - *terraform.NodeApplyableProvider
+    simplivity_vm.example_vm (prepare state) - *terraform.NodeApplyableResource
+  simplivity_vm.example_vm (prepare state) - *terraform.NodeApplyableResource
+    provider.simplivity - *terraform.NodeApplyableProvider
+  ------
+2020/03/27 13:58:26 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2020/03/27 13:58:26 [TRACE] Completed graph transform *terraform.TransitiveReductionTransformer with new graph:
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    simplivity_vm.example_vm - *terraform.NodeApplyableResourceInstance
+  provider.simplivity - *terraform.NodeApplyableProvider
+  provider.simplivity (close) - *terraform.graphNodeCloseProvider
+    simplivity_vm.example_vm - *terraform.NodeApplyableResourceInstance
+  root - terraform.graphNodeRoot
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.simplivity (close) - *terraform.graphNodeCloseProvider
+  simplivity_vm.example_vm - *terraform.NodeApplyableResourceInstance
+    simplivity_vm.example_vm (prepare state) - *terraform.NodeApplyableResource
+  simplivity_vm.example_vm (prepare state) - *terraform.NodeApplyableResource
+    provider.simplivity - *terraform.NodeApplyableProvider
+  ------
+2020/03/27 13:58:26 [DEBUG] Starting graph walk: walkApply
+2020/03/27 13:58:26 [TRACE] dag/walk: updating graph
+2020/03/27 13:58:26 [TRACE] dag/walk: added new vertex: "simplivity_vm.example_vm (prepare state)"
+2020/03/27 13:58:26 [TRACE] dag/walk: added new vertex: "simplivity_vm.example_vm"
+2020/03/27 13:58:26 [TRACE] dag/walk: added new vertex: "provider.simplivity"
+2020/03/27 13:58:26 [TRACE] dag/walk: added new vertex: "meta.count-boundary (EachMode fixup)"
+2020/03/27 13:58:26 [TRACE] dag/walk: added new vertex: "provider.simplivity (close)"
+2020/03/27 13:58:26 [TRACE] dag/walk: added new vertex: "root"
+2020/03/27 13:58:26 [TRACE] dag/walk: added edge: "provider.simplivity (close)" waiting on "simplivity_vm.example_vm"
+2020/03/27 13:58:26 [TRACE] dag/walk: added edge: "simplivity_vm.example_vm (prepare state)" waiting on "provider.simplivity"
+2020/03/27 13:58:26 [TRACE] dag/walk: added edge: "meta.count-boundary (EachMode fixup)" waiting on "simplivity_vm.example_vm"
+2020/03/27 13:58:26 [TRACE] dag/walk: added edge: "simplivity_vm.example_vm" waiting on "simplivity_vm.example_vm (prepare state)"
+2020/03/27 13:58:26 [TRACE] dag/walk: added edge: "root" waiting on "meta.count-boundary (EachMode fixup)"
+2020/03/27 13:58:26 [TRACE] dag/walk: added edge: "root" waiting on "provider.simplivity (close)"
+2020/03/27 13:58:26 [TRACE] dag/walk: dependencies changed for "meta.count-boundary (EachMode fixup)", sending new deps
+2020/03/27 13:58:26 [TRACE] dag/walk: dependencies changed for "simplivity_vm.example_vm", sending new deps
+2020/03/27 13:58:26 [TRACE] dag/walk: dependencies changed for "root", sending new deps
+2020/03/27 13:58:26 [TRACE] dag/walk: dependencies changed for "provider.simplivity (close)", sending new deps
+2020/03/27 13:58:26 [TRACE] dag/walk: dependencies changed for "simplivity_vm.example_vm (prepare state)", sending new deps
+2020/03/27 13:58:26 [TRACE] dag/walk: visiting "provider.simplivity"
+2020/03/27 13:58:26 [TRACE] vertex "provider.simplivity": starting visit (*terraform.NodeApplyableProvider)
+2020/03/27 13:58:26 [TRACE] vertex "provider.simplivity": evaluating
+2020/03/27 13:58:26 [TRACE] [walkApply] Entering eval tree: provider.simplivity
+2020/03/27 13:58:26 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/03/27 13:58:26 [TRACE] <root>: eval: *terraform.EvalInitProvider
+2020-03-27T13:58:26.536+0530 [INFO]  plugin: configuring client automatic mTLS
+2020-03-27T13:58:26.571+0530 [DEBUG] plugin: starting plugin: path=/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/examples/terraform-provider-simplivity args=[/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/examples/terraform-provider-simplivity]
+2020-03-27T13:58:26.571+0530 [DEBUG] plugin: plugin started: path=/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/examples/terraform-provider-simplivity pid=9133
+2020-03-27T13:58:26.571+0530 [DEBUG] plugin: waiting for RPC address: path=/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/examples/terraform-provider-simplivity
+2020-03-27T13:58:26.579+0530 [INFO]  plugin.terraform-provider-simplivity: configuring server automatic mTLS: timestamp=2020-03-27T13:58:26.579+0530
+2020-03-27T13:58:26.614+0530 [DEBUG] plugin: using plugin: version=5
+2020-03-27T13:58:26.614+0530 [DEBUG] plugin.terraform-provider-simplivity: plugin address: network=unix address=/tmp/plugin997518567 timestamp=2020-03-27T13:58:26.614+0530
+2020/03/27 13:58:26 [TRACE] BuiltinEvalContext: Initialized "simplivity" provider for provider.simplivity
+2020/03/27 13:58:26 [TRACE] <root>: eval: terraform.EvalNoop
+2020/03/27 13:58:26 [TRACE] <root>: eval: terraform.EvalNoop
+2020/03/27 13:58:26 [TRACE] <root>: eval: *terraform.EvalOpFilter
+2020/03/27 13:58:26 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/03/27 13:58:26 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2020/03/27 13:58:26 [TRACE] <root>: eval: *terraform.EvalOpFilter
+2020/03/27 13:58:26 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/03/27 13:58:26 [TRACE] <root>: eval: *terraform.EvalConfigProvider
+2020/03/27 13:58:26 [TRACE] buildProviderConfig for provider.simplivity: using explicit config only
+2020/03/27 13:58:26 [TRACE] GRPCProvider: GetSchema
+2020/03/27 13:58:26 [TRACE] GRPCProvider: Configure
+2020/03/27 13:58:27 [TRACE] [walkApply] Exiting eval tree: provider.simplivity
+2020/03/27 13:58:27 [TRACE] vertex "provider.simplivity": visit complete
+2020/03/27 13:58:27 [TRACE] dag/walk: visiting "simplivity_vm.example_vm (prepare state)"
+2020/03/27 13:58:27 [TRACE] vertex "simplivity_vm.example_vm (prepare state)": starting visit (*terraform.NodeApplyableResource)
+2020/03/27 13:58:27 [TRACE] vertex "simplivity_vm.example_vm (prepare state)": evaluating
+2020/03/27 13:58:27 [TRACE] [walkApply] Entering eval tree: simplivity_vm.example_vm (prepare state)
+2020/03/27 13:58:27 [TRACE] <root>: eval: *terraform.EvalWriteResourceState
+2020/03/27 13:58:27 [TRACE] [walkApply] Exiting eval tree: simplivity_vm.example_vm (prepare state)
+2020/03/27 13:58:27 [TRACE] vertex "simplivity_vm.example_vm (prepare state)": visit complete
+2020/03/27 13:58:27 [TRACE] dag/walk: visiting "simplivity_vm.example_vm"
+2020/03/27 13:58:27 [TRACE] vertex "simplivity_vm.example_vm": starting visit (*terraform.NodeApplyableResourceInstance)
+2020/03/27 13:58:27 [TRACE] vertex "simplivity_vm.example_vm": evaluating
+2020/03/27 13:58:27 [TRACE] [walkApply] Entering eval tree: simplivity_vm.example_vm
+2020/03/27 13:58:27 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/03/27 13:58:27 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2020/03/27 13:58:27 [TRACE] <root>: eval: *terraform.EvalReadDiff
+2020/03/27 13:58:27 [TRACE] EvalReadDiff: Read Create change from plan for simplivity_vm.example_vm
+2020/03/27 13:58:27 [TRACE] <root>: eval: *terraform.EvalIf
+2020/03/27 13:58:27 [TRACE] <root>: eval: terraform.EvalNoop
+2020/03/27 13:58:27 [TRACE] <root>: eval: *terraform.EvalIf
+2020/03/27 13:58:27 [TRACE] <root>: eval: *terraform.EvalReadState
+2020/03/27 13:58:27 [TRACE] EvalReadState: reading state for simplivity_vm.example_vm
+2020/03/27 13:58:27 [TRACE] EvalReadState: no state present for simplivity_vm.example_vm
+2020/03/27 13:58:27 [TRACE] <root>: eval: *terraform.EvalReadDiff
+2020/03/27 13:58:27 [TRACE] EvalReadDiff: Read Create change from plan for simplivity_vm.example_vm
+2020/03/27 13:58:27 [TRACE] <root>: eval: *terraform.EvalDiff
+2020/03/27 13:58:27 [TRACE] Re-validating config for "simplivity_vm.example_vm"
+2020/03/27 13:58:27 [TRACE] GRPCProvider: ValidateResourceTypeConfig
+2020/03/27 13:58:27 [TRACE] GRPCProvider: PlanResourceChange
+2020/03/27 13:58:27 [TRACE] <root>: eval: *terraform.EvalCheckPlannedChange
+2020/03/27 13:58:27 [TRACE] EvalCheckPlannedChange: Verifying that actual change (action Create) matches planned change (action Create)
+2020/03/27 13:58:27 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2020/03/27 13:58:27 [TRACE] <root>: eval: *terraform.EvalReadState
+2020/03/27 13:58:27 [TRACE] EvalReadState: reading state for simplivity_vm.example_vm
+2020/03/27 13:58:27 [TRACE] EvalReadState: no state present for simplivity_vm.example_vm
+2020/03/27 13:58:27 [TRACE] <root>: eval: *terraform.EvalReduceDiff
+2020/03/27 13:58:27 [TRACE] <root>: eval: *terraform.EvalIf
+2020/03/27 13:58:27 [TRACE] <root>: eval: terraform.EvalNoop
+2020/03/27 13:58:27 [TRACE] <root>: eval: *terraform.EvalApplyPre
+2020/03/27 13:58:27 [TRACE] <root>: eval: *terraform.EvalApply
+2020/03/27 13:58:27 [DEBUG] simplivity_vm.example_vm: applying the planned Create change
+2020/03/27 13:58:27 [TRACE] GRPCProvider: ApplyResourceChange
+2020-03-27T13:58:27.178+0530 [DEBUG] plugin.terraform-provider-simplivity: panic: interface conversion: interface {} is simplivity.Config, not *simplivity.Config
+2020-03-27T13:58:27.178+0530 [DEBUG] plugin.terraform-provider-simplivity: 
+2020-03-27T13:58:27.178+0530 [DEBUG] plugin.terraform-provider-simplivity: goroutine 70 [running]:
+2020-03-27T13:58:27.178+0530 [DEBUG] plugin.terraform-provider-simplivity: github.com/HewlettPackard/terraform-provider-simplivity/simplivity.resourceSimplivityVirtualMachineRead(0xc0001a8af0, 0xf09fa0, 0xc0004ba410, 0xde38e0, 0xc00027ccf0)
+2020-03-27T13:58:27.178+0530 [DEBUG] plugin.terraform-provider-simplivity: 	/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/simplivity/resource_simplivity_virtual_machine.go:48 +0x226
+2020-03-27T13:58:27.178+0530 [DEBUG] plugin.terraform-provider-simplivity: github.com/HewlettPackard/terraform-provider-simplivity/simplivity.resourceSimplivityVirtualMachineCreate(0xc0001a8af0, 0xf09fa0, 0xc0004ba410, 0x2, 0x18f3300)
+2020-03-27T13:58:27.178+0530 [DEBUG] plugin.terraform-provider-simplivity: 	/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/simplivity/resource_simplivity_virtual_machine.go:44 +0x9b
+2020-03-27T13:58:27.178+0530 [DEBUG] plugin.terraform-provider-simplivity: github.com/hashicorp/terraform-plugin-sdk/helper/schema.(*Resource).Apply(0xc0003fd050, 0xc0000930e0, 0xc0004be3e0, 0xf09fa0, 0xc0004ba410, 0xe48c01, 0xc000769890, 0xc00048f5c0)
+2020-03-27T13:58:27.178+0530 [DEBUG] plugin.terraform-provider-simplivity: 	/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/vendor/github.com/hashicorp/terraform-plugin-sdk/helper/schema/resource.go:310 +0x365
+2020-03-27T13:58:27.178+0530 [DEBUG] plugin.terraform-provider-simplivity: github.com/hashicorp/terraform-plugin-sdk/helper/schema.(*Provider).Apply(0xc000186a00, 0xc000769a10, 0xc0000930e0, 0xc0004be3e0, 0xc0000b2bc8, 0xc0000100f0, 0xe4a7e0)
+2020-03-27T13:58:27.178+0530 [DEBUG] plugin.terraform-provider-simplivity: 	/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/vendor/github.com/hashicorp/terraform-plugin-sdk/helper/schema/provider.go:294 +0x99
+2020-03-27T13:58:27.178+0530 [DEBUG] plugin.terraform-provider-simplivity: github.com/hashicorp/terraform-plugin-sdk/internal/helper/plugin.(*GRPCProviderServer).ApplyResourceChange(0xc000010c40, 0x11dac00, 0xc00048ee40, 0xc0001a8000, 0xc000010c40, 0xc00048ee40, 0xc000071b78)
+2020-03-27T13:58:27.178+0530 [DEBUG] plugin.terraform-provider-simplivity: 	/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/vendor/github.com/hashicorp/terraform-plugin-sdk/internal/helper/plugin/grpc_provider.go:885 +0x8b4
+2020-03-27T13:58:27.178+0530 [DEBUG] plugin.terraform-provider-simplivity: github.com/hashicorp/terraform-plugin-sdk/internal/tfplugin5._Provider_ApplyResourceChange_Handler(0xf52c40, 0xc000010c40, 0x11dac00, 0xc00048ee40, 0xc00055c060, 0x0, 0x11dac00, 0xc00048ee40, 0xc0002d8630, 0x82)
+2020-03-27T13:58:27.178+0530 [DEBUG] plugin.terraform-provider-simplivity: 	/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/vendor/github.com/hashicorp/terraform-plugin-sdk/internal/tfplugin5/tfplugin5.pb.go:3305 +0x217
+2020-03-27T13:58:27.178+0530 [DEBUG] plugin.terraform-provider-simplivity: google.golang.org/grpc.(*Server).processUnaryRPC(0xc000492780, 0x11e48c0, 0xc000580c00, 0xc000192300, 0xc0001f86c0, 0x18b8f00, 0x0, 0x0, 0x0)
+2020-03-27T13:58:27.178+0530 [DEBUG] plugin.terraform-provider-simplivity: 	/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/vendor/google.golang.org/grpc/server.go:1024 +0x501
+2020-03-27T13:58:27.178+0530 [DEBUG] plugin.terraform-provider-simplivity: google.golang.org/grpc.(*Server).handleStream(0xc000492780, 0x11e48c0, 0xc000580c00, 0xc000192300, 0x0)
+2020-03-27T13:58:27.178+0530 [DEBUG] plugin.terraform-provider-simplivity: 	/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/vendor/google.golang.org/grpc/server.go:1313 +0xd3d
+2020-03-27T13:58:27.178+0530 [DEBUG] plugin.terraform-provider-simplivity: google.golang.org/grpc.(*Server).serveStreams.func1.1(0xc0000383b0, 0xc000492780, 0x11e48c0, 0xc000580c00, 0xc000192300)
+2020-03-27T13:58:27.178+0530 [DEBUG] plugin.terraform-provider-simplivity: 	/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/vendor/google.golang.org/grpc/server.go:722 +0xa1
+2020-03-27T13:58:27.178+0530 [DEBUG] plugin.terraform-provider-simplivity: created by google.golang.org/grpc.(*Server).serveStreams.func1
+2020-03-27T13:58:27.178+0530 [DEBUG] plugin.terraform-provider-simplivity: 	/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/vendor/google.golang.org/grpc/server.go:720 +0xa1
+2020/03/27 13:58:27 [DEBUG] simplivity_vm.example_vm: apply errored, but we're indicating that via the Error pointer rather than returning it: rpc error: code = Unavailable desc = transport is closing
+2020-03-27T13:58:27.180+0530 [DEBUG] plugin: plugin process exited: path=/home/sijeesh/go/src/github.com/HewlettPackard/terraform-provider-simplivity/examples/terraform-provider-simplivity pid=9133 error="exit status 2"
+2020/03/27 13:58:27 [TRACE] <root>: eval: *terraform.EvalMaybeTainted
+2020/03/27 13:58:27 [TRACE] EvalMaybeTainted: simplivity_vm.example_vm encountered an error during creation, so it is now marked as tainted
+2020/03/27 13:58:27 [TRACE] <root>: eval: *terraform.EvalWriteState
+2020/03/27 13:58:27 [TRACE] EvalWriteState: removing state object for simplivity_vm.example_vm
+2020/03/27 13:58:27 [TRACE] <root>: eval: *terraform.EvalApplyProvisioners
+2020/03/27 13:58:27 [TRACE] EvalApplyProvisioners: simplivity_vm.example_vm has no state, so skipping provisioners
+2020/03/27 13:58:27 [TRACE] <root>: eval: *terraform.EvalMaybeTainted
+2020/03/27 13:58:27 [TRACE] EvalMaybeTainted: simplivity_vm.example_vm encountered an error during creation, so it is now marked as tainted
+2020/03/27 13:58:27 [TRACE] <root>: eval: *terraform.EvalWriteState
+2020/03/27 13:58:27 [TRACE] EvalWriteState: removing state object for simplivity_vm.example_vm
+2020/03/27 13:58:27 [TRACE] <root>: eval: *terraform.EvalIf
+2020/03/27 13:58:27 [TRACE] <root>: eval: *terraform.EvalIf
+2020/03/27 13:58:27 [TRACE] <root>: eval: *terraform.EvalWriteDiff
+2020/03/27 13:58:27 [TRACE] <root>: eval: *terraform.EvalApplyPost
+2020/03/27 13:58:27 [ERROR] <root>: eval: *terraform.EvalApplyPost, err: rpc error: code = Unavailable desc = transport is closing
+2020/03/27 13:58:27 [ERROR] <root>: eval: *terraform.EvalSequence, err: rpc error: code = Unavailable desc = transport is closing
+2020/03/27 13:58:27 [TRACE] [walkApply] Exiting eval tree: simplivity_vm.example_vm
+2020/03/27 13:58:27 [TRACE] vertex "simplivity_vm.example_vm": visit complete
+2020/03/27 13:58:27 [TRACE] dag/walk: upstream of "meta.count-boundary (EachMode fixup)" errored, so skipping
+2020/03/27 13:58:27 [TRACE] dag/walk: upstream of "provider.simplivity (close)" errored, so skipping
+2020/03/27 13:58:27 [TRACE] dag/walk: upstream of "root" errored, so skipping
+2020/03/27 13:58:27 [TRACE] statemgr.Filesystem: not making a backup, because the new snapshot is identical to the old
+2020/03/27 13:58:27 [TRACE] statemgr.Filesystem: no state changes since last snapshot
+2020/03/27 13:58:27 [TRACE] statemgr.Filesystem: writing snapshot at terraform.tfstate
+2020/03/27 13:58:27 [TRACE] statemgr.Filesystem: removing lock metadata file .terraform.tfstate.lock.info
+2020/03/27 13:58:27 [TRACE] statemgr.Filesystem: unlocking terraform.tfstate using fcntl flock
+2020-03-27T13:58:27.185+0530 [DEBUG] plugin: plugin exited
