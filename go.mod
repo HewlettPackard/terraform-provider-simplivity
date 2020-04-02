@@ -3,7 +3,7 @@ module github.com/HewlettPackard/terraform-provider-simplivity
 go 1.14
 
 require (
-	github.com/HewlettPackard/simplivity-go v0.0.0-00010101000000-000000000000
+	github.com/HewlettPackard/simplivity-go v1.0.0
 	github.com/hashicorp/terraform-plugin-sdk v1.9.0
 )
 

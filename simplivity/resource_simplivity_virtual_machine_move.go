@@ -4,9 +4,9 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 )
 
-func resourceSimplivityVirtualMachineClone() *schema.Resource {
+func resourceSimplivityVirtualMachineMove() *schema.Resource {
 	return &schema.Resource{
-		Create: resourceSimplivityVirtualMachineCloneCreate,
+		Create: resourceSimplivityVirtualMachineMoveCreate,
 		Read:   resourceSimplivityVirtualMachineRead,
 		Update: resourceSimplivityVirtualMachineCreateOrUpdate,
 		Delete: resourceSimplivityVirtualMachineDelete,
@@ -24,33 +24,39 @@ func resourceSimplivityVirtualMachineClone() *schema.Resource {
 				Type:     schema.TypeString,
 				Required: true,
 			},
-			"app_consistent": {
-				Type:     schema.TypeBool,
-				Optional: true,
-				Default:  false,
+			"datastore_name": {
+				Type:     schema.TypeString,
+				Required: true,
 			},
 		},
 	}
 }
 
-func resourceSimplivityVirtualMachineCloneCreate(d *schema.ResourceData, meta interface{}) error {
+func resourceSimplivityVirtualMachineMoveCreate(d *schema.ResourceData, meta interface{}) error {
 	client := meta.(*Config).Client
 
-	new_vm_name := d.Get("new_vm_name").(string)
 	name := d.Get("name").(string)
-	app_consistent := d.Get("app_consistent").(bool)
+	new_vm_name := d.Get("new_vm_name").(string)
+	datastore_name := d.Get("datastore_name").(string)
 
 	vm, err := client.VirtualMachines.GetByName(name)
 	if err != nil {
 		return err
 	}
 
-	_, err = vm.Clone(new_vm_name, app_consistent)
+	datastore, err := client.Datastores.GetByName(datastore_name)
 	if err != nil {
 		return err
 	}
 
-	d.SetId(name)
+	_, err = vm.Move(new_vm_name, datastore)
+	if err != nil {
+		return err
+	}
+
+	d.Set("name", new_vm_name)
+
+	d.SetId(new_vm_name)
 
 	return resourceSimplivityVirtualMachineRead(d, meta)
 }

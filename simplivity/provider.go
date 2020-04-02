@@ -35,8 +35,10 @@ func Provider() terraform.ResourceProvider {
 		},
 
 		ResourcesMap: map[string]*schema.Resource{
-			"simplivity_vm":       resourceSimplivityVirtualMachine(),
-			"simplivity_vm_clone": resourceSimplivityVirtualMachineClone()},
+			"simplivity_vm":        resourceSimplivityVirtualMachine(),
+			"simplivity_vm_clone":  resourceSimplivityVirtualMachineClone(),
+			"simplivity_vm_move":   resourceSimplivityVirtualMachineMove(),
+			"simplivity_vm_backup": resourceSimplivityVirtualMachineBackup()},
 
 		DataSourcesMap: map[string]*schema.Resource{},
 	}

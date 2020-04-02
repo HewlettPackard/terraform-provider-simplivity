@@ -9,9 +9,9 @@ import (
 
 func resourceSimplivityVirtualMachine() *schema.Resource {
 	return &schema.Resource{
-		Create: resourceSimplivityVirtualMachineCreate,
+		Create: resourceSimplivityVirtualMachineCreateOrUpdate,
 		Read:   resourceSimplivityVirtualMachineRead,
-		Update: resourceSimplivityVirtualMachineUpdate,
+		Update: resourceSimplivityVirtualMachineCreateOrUpdate,
 		Delete: resourceSimplivityVirtualMachineDelete,
 
 		Importer: &schema.ResourceImporter{
@@ -38,13 +38,6 @@ func resourceSimplivityVirtualMachine() *schema.Resource {
 	}
 }
 
-func resourceSimplivityVirtualMachineCreate(d *schema.ResourceData, meta interface{}) error {
-	name := d.Get("name").(string)
-
-	d.SetId(name)
-	return resourceSimplivityVirtualMachineRead(d, meta)
-}
-
 func resourceSimplivityVirtualMachineRead(d *schema.ResourceData, meta interface{}) error {
 	client := meta.(*Config).Client
 	name := d.Id()
@@ -61,7 +54,7 @@ func resourceSimplivityVirtualMachineRead(d *schema.ResourceData, meta interface
 	return nil
 }
 
-func resourceSimplivityVirtualMachineUpdate(d *schema.ResourceData, meta interface{}) error {
+func resourceSimplivityVirtualMachineCreateOrUpdate(d *schema.ResourceData, meta interface{}) error {
 	client := meta.(*Config).Client
 	name := d.Get("name").(string)
 
@@ -74,10 +67,14 @@ func resourceSimplivityVirtualMachineUpdate(d *schema.ResourceData, meta interfa
 		vm.UpdatePowerState(val.(string))
 	}
 
+	d.SetId(name)
+
 	return resourceSimplivityVirtualMachineRead(d, meta)
 }
 
 func resourceSimplivityVirtualMachineDelete(d *schema.ResourceData, meta interface{}) error {
 	log.Printf("[WARN] VM delete endpoint doesnt exist")
+	d.SetId("")
+
 	return nil
 }
