@@ -25,9 +25,21 @@ provider "simplivity" {
 #  power_state = "on"
 #}
 
-resource "simplivity_vm_backup" "example_vm_backup" {
-  name = "test_1_backup"
-  vm_name = "test_1"
-  omnistack_cluster_name = "RemoteCluster"
+#resource "simplivity_vm_backup" "example_vm_backup" {
+#  name = "test_1_backup"
+#  vm_name = "test_1"
+#  omnistack_cluster_name = "RemoteCluster"
+#}
+
+data "simplivity_vm" "example_vm_data" {
+  name = "test_1"
 }
 
+data "simplivity_vm_backup" "example_vm_backup_data" {
+  name = "test_1_backup"
+}
+
+resource "simplivity_vm_backup" "example_vm_backup" {
+  name = data.simplivity_vm.example_vm_data.name
+  vm_name = "test_1"
+}

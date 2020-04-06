@@ -40,7 +40,9 @@ func Provider() terraform.ResourceProvider {
 			"simplivity_vm_move":   resourceSimplivityVirtualMachineMove(),
 			"simplivity_vm_backup": resourceSimplivityVirtualMachineBackup()},
 
-		DataSourcesMap: map[string]*schema.Resource{},
+		DataSourcesMap: map[string]*schema.Resource{
+			"simplivity_vm":        dataSourceSimplivityVirtualMachine(),
+			"simplivity_vm_backup": dataSourceSimplivityVirtualMachineBackup()},
 	}
 
 	p.ConfigureFunc = providerConfigure(p)
