@@ -11,7 +11,7 @@ func Provider() terraform.ResourceProvider {
 			"ovc_ip": {
 				Type:        schema.TypeString,
 				Required:    true,
-				DefaultFunc: schema.EnvDefaultFunc("OVC_TOKEN", nil),
+				DefaultFunc: schema.EnvDefaultFunc("OVC_IP", nil),
 				Description: "IP of the Omnistack Virtual Controller",
 			},
 			"username": {
@@ -26,10 +26,10 @@ func Provider() terraform.ResourceProvider {
 				DefaultFunc: schema.EnvDefaultFunc("VCENTER_PASSWORD", nil),
 				Description: "Vcenter password",
 			},
-			"certificate_path": {
+			"ssl_certificate_path": {
 				Type:        schema.TypeString,
 				Optional:    true,
-				DefaultFunc: schema.EnvDefaultFunc("CERTIFICATE_PATH", nil),
+				DefaultFunc: schema.EnvDefaultFunc("SSL_CERTIFICATE_PATH", nil),
 				Description: "SSL certificate path",
 			},
 		},
@@ -56,7 +56,7 @@ func providerConfigure(p *schema.Provider) schema.ConfigureFunc {
 			OVCIP:           d.Get("ovc_ip").(string),
 			Username:        d.Get("username").(string),
 			Password:        d.Get("password").(string),
-			CertificatePath: d.Get("certificate_path").(string),
+			CertificatePath: d.Get("ssl_certificate_path").(string),
 		}
 
 		err := config.SetClient()
