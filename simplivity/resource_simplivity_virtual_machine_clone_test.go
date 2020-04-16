@@ -9,31 +9,31 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/terraform"
 )
 
-func TestAccSimplivityVirtualMachine_base(t *testing.T) {
+func TestAccSimplivityVirtualMachineClone_base(t *testing.T) {
 	var vm ovc.VirtualMachine
-	rn := "simplivity_vm.test"
+	rn := "simplivity_vm_clone.test"
 
 	resource.Test(t, resource.TestCase{
 		PreCheck:  func() { testAccPreCheck(t) },
 		Providers: testAccProviders,
 		Steps: []resource.TestStep{
 			{
-				Config: testAccSimplivityVirtualMachine,
+				Config: testAccSimplivityVirtualMachineClone,
 				Check: resource.ComposeTestCheckFunc(
-					testAccCheckSimplivityVirtualMachineExists(rn, &vm),
-					resource.TestCheckResourceAttr(rn, "name", "test_vm"),
+					testAccCheckSimplivityVirtualMachineCloneExists(rn, &vm),
 				),
 			},
 			{
-				ResourceName:      rn,
-				ImportState:       true,
-				ImportStateVerify: true,
+				ResourceName:            rn,
+				ImportState:             true,
+				ImportStateVerify:       true,
+				ImportStateVerifyIgnore: []string{"new_vm_name", "app_consistent"},
 			},
 		},
 	})
 }
 
-func testAccCheckSimplivityVirtualMachineExists(n string, vm *ovc.VirtualMachine) resource.TestCheckFunc {
+func testAccCheckSimplivityVirtualMachineCloneExists(n string, vm *ovc.VirtualMachine) resource.TestCheckFunc {
 	return func(s *terraform.State) error {
 		rs, ok := s.RootModule().Resources[n]
 		if !ok {
@@ -63,6 +63,7 @@ func testAccCheckSimplivityVirtualMachineExists(n string, vm *ovc.VirtualMachine
 	}
 }
 
-var testAccSimplivityVirtualMachine = `resource "simplivity_vm" "test" {
+var testAccSimplivityVirtualMachineClone = `resource "simplivity_vm_clone" "test" {
   name = "test_vm"
+  new_vm_name = "cloned_test_vm"
 }`

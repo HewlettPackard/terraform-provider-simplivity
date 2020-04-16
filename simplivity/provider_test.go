@@ -33,6 +33,14 @@ func testAccPreCheck(t *testing.T) {
 	if v := os.Getenv("OVC_IP"); v == "" {
 		t.Fatal("OVC_IP should be set for acceptance test")
 	}
+
+	if v := os.Getenv("VCENTER_USERNAME"); v == "" {
+		t.Fatal("VCENTER_USERNAME should be set for acceptance test")
+	}
+
+	if v := os.Getenv("VCENTER_PASSWORD"); v == "" {
+		t.Fatal("VCENTER_PASSWORD should be set for acceptance test")
+	}
 }
 
 func testProviderConfig() (*Config, error) {

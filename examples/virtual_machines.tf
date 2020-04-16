@@ -31,15 +31,15 @@ provider "simplivity" {
 #  omnistack_cluster_name = "RemoteCluster"
 #}
 
-data "simplivity_vm" "example_vm_data" {
-  name = "test_1"
-}
-
-data "simplivity_vm_backup" "example_vm_backup_data" {
-  name = "test_1_backup"
-}
+#data "simplivity_vm" "example_vm_data" {
+#  name = "test_1"
+#}
+#
+#data "simplivity_vm_backup" "example_vm_backup_data" {
+#  name = "test_1_backup1"
+#}
 
 resource "simplivity_vm_backup" "example_vm_backup" {
-  name = data.simplivity_vm.example_vm_data.name
+  name = "test_1_back"
   vm_name = "test_1"
 }

@@ -100,6 +100,7 @@ func resourceSimplivityVirtualMachineBackupRead(d *schema.ResourceData, meta int
 		return err
 	}
 
+	d.SetId(name)
 	d.Set("name", name)
 	d.Set("app_consistent", backup.ApplicationConsistent)
 	d.Set("cosistency_type", backup.ConsistencyType)

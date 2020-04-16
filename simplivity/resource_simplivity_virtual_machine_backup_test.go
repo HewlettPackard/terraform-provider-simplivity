@@ -9,19 +9,18 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/terraform"
 )
 
-func TestAccSimplivityVirtualMachine_base(t *testing.T) {
-	var vm ovc.VirtualMachine
-	rn := "simplivity_vm.test"
+func TestAccSimplivityVirtualMachineBackup_base(t *testing.T) {
+	var backup ovc.Backup
+	rn := "simplivity_vm_backup.test"
 
 	resource.Test(t, resource.TestCase{
 		PreCheck:  func() { testAccPreCheck(t) },
 		Providers: testAccProviders,
 		Steps: []resource.TestStep{
 			{
-				Config: testAccSimplivityVirtualMachine,
+				Config: testAccSimplivityVirtualMachineBackup,
 				Check: resource.ComposeTestCheckFunc(
-					testAccCheckSimplivityVirtualMachineExists(rn, &vm),
-					resource.TestCheckResourceAttr(rn, "name", "test_vm"),
+					testAccCheckSimplivityVirtualMachineBackupExists(rn, &backup),
 				),
 			},
 			{
@@ -33,7 +32,7 @@ func TestAccSimplivityVirtualMachine_base(t *testing.T) {
 	})
 }
 
-func testAccCheckSimplivityVirtualMachineExists(n string, vm *ovc.VirtualMachine) resource.TestCheckFunc {
+func testAccCheckSimplivityVirtualMachineBackupExists(n string, backup *ovc.Backup) resource.TestCheckFunc {
 	return func(s *terraform.State) error {
 		rs, ok := s.RootModule().Resources[n]
 		if !ok {
@@ -49,20 +48,21 @@ func testAccCheckSimplivityVirtualMachineExists(n string, vm *ovc.VirtualMachine
 			return err
 		}
 
-		testVM, err := config.Client.VirtualMachines.GetByName(rs.Primary.ID)
+		testBackup, err := config.Client.Backups.GetByName(rs.Primary.ID)
 		if err != nil {
 			return err
 		}
 
-		if testVM.Name != rs.Primary.ID {
+		if testBackup.Name != rs.Primary.ID {
 			return fmt.Errorf("Instance not found")
 		}
 
-		*vm = *testVM
+		*backup = *testBackup
 		return nil
 	}
 }
 
-var testAccSimplivityVirtualMachine = `resource "simplivity_vm" "test" {
-  name = "test_vm"
+var testAccSimplivityVirtualMachineBackup = `resource "simplivity_vm_backup" "test" {
+  name = "vm_test_backup"
+  vm_name = "test_1"
 }`

@@ -64,7 +64,10 @@ func resourceSimplivityVirtualMachineCreateOrUpdate(d *schema.ResourceData, meta
 	}
 
 	if val, ok := d.GetOk("power_state"); ok {
-		vm.UpdatePowerState(val.(string))
+		err = vm.UpdatePowerState(val.(string))
+		if err != nil {
+			return err
+		}
 	}
 
 	d.SetId(name)

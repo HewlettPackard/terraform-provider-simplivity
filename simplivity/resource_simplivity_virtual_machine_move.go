@@ -8,9 +8,8 @@ func resourceSimplivityVirtualMachineMove() *schema.Resource {
 	return &schema.Resource{
 		Create: resourceSimplivityVirtualMachineMoveCreate,
 		Read:   resourceSimplivityVirtualMachineRead,
-		Update: resourceSimplivityVirtualMachineCreateOrUpdate,
 		Delete: resourceSimplivityVirtualMachineDelete,
-
+		Update: resourceSimplivityVirtualMachineCreateOrUpdate,
 		Importer: &schema.ResourceImporter{
 			State: schema.ImportStatePassthrough,
 		},
@@ -54,9 +53,23 @@ func resourceSimplivityVirtualMachineMoveCreate(d *schema.ResourceData, meta int
 		return err
 	}
 
-	d.Set("name", new_vm_name)
-
-	d.SetId(new_vm_name)
+	d.SetId(name)
 
 	return resourceSimplivityVirtualMachineRead(d, meta)
 }
+
+//func resourceSimplivityVirtualMachineMoveRead(d *schema.ResourceData, meta interface{}) error {
+//	client := meta.(*Config).Client
+//	name := d.Get("name").(string)
+//
+//	log.Printf("[DEBUG] Reading Virtual Machine: %s", name)
+//	vm, err := client.VirtualMachines.GetByName(name)
+//	if err != nil {
+//		d.SetId("")
+//		return nil
+//	}
+//
+//	d.Set("name", vm.Name)
+//
+//	return nil
+//}
