@@ -14,8 +14,9 @@ func TestAccSimplivityVirtualMachine_base(t *testing.T) {
 	rn := "simplivity_vm.test"
 
 	resource.Test(t, resource.TestCase{
-		PreCheck:  func() { testAccPreCheck(t) },
-		Providers: testAccProviders,
+		PreCheck:     func() { testAccPreCheck(t) },
+		Providers:    testAccProviders,
+		CheckDestroy: testAccCheckSimplivityVMDestroy,
 		Steps: []resource.TestStep{
 			{
 				Config: testAccSimplivityVirtualMachine,
@@ -61,6 +62,11 @@ func testAccCheckSimplivityVirtualMachineExists(n string, vm *ovc.VirtualMachine
 		*vm = *testVM
 		return nil
 	}
+}
+
+func testAccCheckSimplivityVMDestroy(s *terraform.State) error {
+	testAccProvider.Meta().(*Config).Client
+	return nil
 }
 
 var testAccSimplivityVirtualMachine = `resource "simplivity_vm" "test" {
