@@ -39,7 +39,7 @@ resource "simplivity_vm_clone" "example_vm_clone" {
   new_vm_name = "vm_clone_name"
 }
 
-# Create a back of the VM
+# Create a bacupk of the VM
 resource "simplivity_vm_backup" "example_vm_backup" {
   name = "vm_backup_name"
   vm_name = "vm_name"
