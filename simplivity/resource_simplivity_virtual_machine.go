@@ -54,6 +54,8 @@ func resourceSimplivityVirtualMachineRead(d *schema.ResourceData, meta interface
 	return nil
 }
 
+// It will not create a new VM as there is no create/update available for VM resource
+//
 func resourceSimplivityVirtualMachineCreateOrUpdate(d *schema.ResourceData, meta interface{}) error {
 	client := meta.(*Config).Client
 	name := d.Get("name").(string)
@@ -75,6 +77,7 @@ func resourceSimplivityVirtualMachineCreateOrUpdate(d *schema.ResourceData, meta
 	return resourceSimplivityVirtualMachineRead(d, meta)
 }
 
+// It will not delete a VM from the enviorment as there is no endpoint available for delete operation.
 func resourceSimplivityVirtualMachineDelete(d *schema.ResourceData, meta interface{}) error {
 	log.Printf("[WARN] VM delete endpoint doesnt exist")
 	d.SetId("")

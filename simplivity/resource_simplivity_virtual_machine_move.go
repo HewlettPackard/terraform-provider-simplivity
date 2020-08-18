@@ -57,19 +57,3 @@ func resourceSimplivityVirtualMachineMoveCreate(d *schema.ResourceData, meta int
 
 	return resourceSimplivityVirtualMachineRead(d, meta)
 }
-
-//func resourceSimplivityVirtualMachineMoveRead(d *schema.ResourceData, meta interface{}) error {
-//	client := meta.(*Config).Client
-//	name := d.Get("name").(string)
-//
-//	log.Printf("[DEBUG] Reading Virtual Machine: %s", name)
-//	vm, err := client.VirtualMachines.GetByName(name)
-//	if err != nil {
-//		d.SetId("")
-//		return nil
-//	}
-//
-//	d.Set("name", vm.Name)
-//
-//	return nil
-//}
