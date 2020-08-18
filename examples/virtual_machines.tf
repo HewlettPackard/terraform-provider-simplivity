@@ -1,40 +1,40 @@
 provider "simplivity" {
-   ovc_ip = "10.20.4.245"
-   username = "Sijeesh.Kattumunda@demo.local"
-   password = "sijeaug@2020"
+   ovc_ip = "<ovc_ip>"
+   username = "<vcenter_username>"
+   password = "<vcenter_password>"
 }
 
 resource "simplivity_vm" "example_vm" {
-  name = "test_1"
+  name = "vm_name"
   power_state = "off"
 }
 
 resource "simplivity_vm_clone" "example_vm_clone" {
-  name = "test_1"
-  new_vm_name = "terraform_test_clone"
+  name = "vm_name"
+  new_vm_name = "vm_clone_name"
 }
 
 resource "simplivity_vm_move" "example_vm_move" {
-  name = "terraform_test_clone"
-  new_vm_name = "terraform_test_move"
+  name = "vm_name"
+  new_vm_name = "vm_moved_name"
   datastore_name = ""
 }
 
 resource "simplivity_vm_backup" "example_vm_backup" {
-  name = "test_1_backup"
-  vm_name = "test_1"
-  omnistack_cluster_name = "RemoteCluster"
+  name = "backup_name"
+  vm_name = "vm_name"
+  omnistack_cluster_name = "cluster_name"
 }
 
 resource "simplivity_vm_backup" "example_vm_backup_local" {
-  name = "test_1_back"
-  vm_name = "test_1"
+  name = "backup_name"
+  vm_name = "vm_name"
 }
 
 data "simplivity_vm" "example_vm_data" {
-  name = "test_1"
+  name = "vm_name"
 }
 
 data "simplivity_vm_backup" "example_vm_backup_data" {
-  name = "test_1_backup1"
+  name = "vm_backup_name"
 }
