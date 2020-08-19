@@ -1,4 +1,4 @@
-Terraform Provider for SimpliVity HCI
+Terraform Provider for HPE SimpliVity
 ==================
 
 - Website: https://www.terraform.io
